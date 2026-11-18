@@ -159,3 +159,75 @@ journeyButtons.forEach((button) => {
     });
 
 });
+
+
+/* =========================================
+   FEATURE 05 - SHARED PHOTO LIGHTBOX
+========================================= */
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = document.querySelector(".lightbox__image");
+const lightboxCaption = document.querySelector(".lightbox__caption");
+const lightboxClose = document.querySelector(".lightbox__close");
+
+// Open the photo viewer when a gallery image is clicked
+
+document.addEventListener("click", (event) => {
+
+    const photoButton = event.target.closest("[data-image]");
+
+    if (!photoButton || !lightbox || !lightboxImage) {
+        return;
+    }
+
+    lightboxImage.src = photoButton.dataset.image;
+
+    const thumbnail = photoButton.querySelector("img");
+
+    lightboxImage.alt = thumbnail
+        ? thumbnail.alt
+        : photoButton.dataset.caption || "Gallery photograph";
+
+    if (lightboxCaption) {
+        lightboxCaption.textContent =
+            photoButton.dataset.caption || "";
+    }
+
+    if (!lightbox.open) {
+        lightbox.showModal();
+    }
+
+});
+
+// Close using the close button
+
+if (lightbox && lightboxClose) {
+
+    lightboxClose.addEventListener("click", () => {
+        lightbox.close();
+    });
+
+    // Close when clicking outside the photograph
+
+    lightbox.addEventListener("click", (event) => {
+
+        if (event.target === lightbox) {
+            lightbox.close();
+        }
+
+    });
+
+    // Clear the old image after closing
+
+    lightbox.addEventListener("close", () => {
+
+        lightboxImage.removeAttribute("src");
+        lightboxImage.alt = "";
+
+        if (lightboxCaption) {
+            lightboxCaption.textContent = "";
+        }
+
+    });
+
+}
