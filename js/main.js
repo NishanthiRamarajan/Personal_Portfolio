@@ -49,3 +49,31 @@ if (toggle && menu) {
     });
 
 }
+
+
+/* =========================================
+   FEATURE 02 - HERO DESIGNATIONS
+========================================= */
+
+const designationToggle = document.getElementById("designationToggle");
+const personArea = document.querySelector(".hero__person-area");
+
+if (designationToggle && personArea) {
+
+    designationToggle.addEventListener("click", () => {
+
+        const active = personArea.classList.toggle("is-active");
+
+        designationToggle.setAttribute(
+            "aria-expanded",
+            String(active)
+        );
+
+        designationToggle.setAttribute(
+            "aria-label",
+            active ? "Hide my designations" : "Reveal my designations"
+        );
+
+    });
+
+}

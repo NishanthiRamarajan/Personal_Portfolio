@@ -48,10 +48,77 @@
 
     <main>
 
+<!-- ============ HERO SECTION ============ -->
+    <section id="hero" class="hero" data-tone="light">
+
+        <!-- Background image -->
+        <img
+            src="images/hero/HeroSectionImage.png"
+            alt="Portrait photograph in a mountain and lake landscape"
+            class="hero__image"
+            fetchpriority="high"
+        >
+
+        <!-- Image overlay -->
+        <div class="hero__overlay"></div>
+
+        <!-- Main content -->
+        <div class="hero__content">
+
+            <p class="hero__eyebrow">HELLO, I'M</p>
+
+            <h1 class="hero__name" id="heroName">
+                <span>NIZZ</span>
+            </h1>
+
+            <p class="hero__tagline">
+                Driven by curiosity.<br>
+                Inspired by possibilities.
+            </p>
+
+            <a href="#journey" class="hero__button">
+                Explore My Journey
+                <span aria-hidden="true">→</span>
+            </a>
+
+        </div>
+
+        <!-- Floating designations -->
+        <div class="hero__person-area">
+
+            <button
+                type="button"
+                class="hero__person-trigger"
+                id="designationToggle"
+                aria-label="Reveal my designations"
+                aria-expanded="false">
+            </button>
+
+            <span class="hero__designation hero__designation--one">
+                Developer
+            </span>
+
+            <span class="hero__designation hero__designation--two">
+                Problem Solver
+            </span>
+
+            <span class="hero__designation hero__designation--three">
+                Curious Mind
+            </span>
+
+        </div>
+
+        <!-- Scroll indicator -->
+        <a href="#journey" class="hero__scroll">
+            <span>SCROLL TO EXPLORE</span>
+            <span class="hero__scroll-arrow" aria-hidden="true">↓</span>
+        </a>
+
+    </section>
+
+
         <!-- Temporary section placeholders -->
-        <section id="hero" class="placeholder">
-            <h1>Home</h1>
-        </section>
+        
 
         <section id="journey" class="placeholder">
             <h2>Journey</h2>
