@@ -1,0 +1,38 @@
+name: Validate HTML and CSS
+
+on:
+  push:
+    branches: [develop]
+  pull_request:
+    branches: [develop]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Validate HTML (HTMLHint)
+        run: npx --yes htmlhint@1 --config .htmlhintrc index.html
+
+      - name: Validate CSS (Stylelint, error rules only)
+        run: |
+          cat > "$RUNNER_TEMP/stylelint.json" <<'JSON'
+          {
+            "rules": {
+              "block-no-empty": true,
+              "color-no-invalid-hex": true,
+              "property-no-unknown": true,
+              "declaration-block-no-duplicate-properties": [true, { "ignore": ["consecutive-duplicates-with-different-values"] }],
+              "unit-no-unknown": true
+            }
+          }
+          JSON
+          npx --yes stylelint@16 --config "$RUNNER_TEMP/stylelint.json" "css/*.css"
+
+      - name: Check JavaScript syntax
+        run: node --check js/main.js

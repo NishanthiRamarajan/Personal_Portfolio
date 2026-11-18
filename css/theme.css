@@ -4,6 +4,7 @@
    ===================================================== */
 
 :root {
+    color-scheme: light;
 
     /* Primary / secondary / accent */
     --color-primary: #252A27;
@@ -12,6 +13,7 @@
     --color-accent-text: #5F6B58;        /* accent that passes contrast on light backgrounds */
     --color-accent-on-dark: #B9C5AE;     /* accent that passes contrast on dark backgrounds */
     --color-white: #FFFFFF;
+    --color-on-accent: #FFFFFF;          /* text placed on accent gradients */
 
     /* Backgrounds */
     --color-background: #F5F6F2;
@@ -54,6 +56,8 @@
     --gradient-photo: linear-gradient(135deg, var(--color-background) 0%, var(--color-tint) 100%);
     --gradient-photo-reverse: linear-gradient(135deg, var(--color-tint) 0%, var(--color-background) 100%);
     --gradient-music: radial-gradient(circle at 50% 48%, var(--color-tint) 0%, var(--color-background) 72%);
+    --gradient-caption: linear-gradient(0deg, var(--color-scrim) 0%, transparent 100%);
+    --gradient-portrait: linear-gradient(0deg, var(--color-scrim) 0%, transparent 65%);
     --gradient-vinyl: repeating-radial-gradient(circle, var(--color-primary) 0, var(--color-primary) 2px, var(--color-secondary) 3px, var(--color-primary) 4px);
 
     /* Typography */
@@ -80,4 +84,44 @@
     --border-radius-large: 14px;
     --transition-speed: 0.3s;
     --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+
+/* =====================================================
+   DARK THEME — same variable names, different values.
+   The toggle in the navbar sets data-theme="dark" on <html>.
+   Edit these values to restyle dark mode.
+   ===================================================== */
+:root[data-theme="dark"] {
+    color-scheme: dark;
+
+    --color-primary: #EEF1EA;
+    --color-secondary: #7F8F78;
+    --color-accent: #8FA184;
+    --color-accent-text: #B9C8AE;
+    --color-accent-on-dark: #B9C8AE;
+    --color-on-accent: #10140F;
+
+    --color-background: #141815;
+    --color-tint: #1C221D;
+    --color-deep: #0F1310;
+    --color-deep-2: #090C0A;
+
+    --color-text: #EEF1EA;
+    --color-text-secondary: #A8B2A6;
+    --color-text-on-dark: #EEF1EA;
+    --color-text-on-dark-muted: rgba(238, 241, 234, 0.72);
+
+    --color-border: rgba(238, 241, 234, 0.16);
+    --color-border-on-dark: rgba(238, 241, 234, 0.2);
+    --color-shadow: rgba(0, 0, 0, 0.45);
+    --color-shadow-strong: rgba(0, 0, 0, 0.6);
+    --color-scrim: rgba(0, 0, 0, 0.82);
+    --color-overlay: rgba(20, 24, 21, 0.9);
+    --color-overlay-soft: rgba(20, 24, 21, 0.5);
+    --color-glass: rgba(255, 255, 255, 0.1);
+    --color-glass-hover: rgba(255, 255, 255, 0.18);
+    --color-glass-border: rgba(255, 255, 255, 0.28);
+    --color-glass-dark: rgba(238, 241, 234, 0.05);
+    --color-menu: rgba(20, 24, 21, 0.96);
 }

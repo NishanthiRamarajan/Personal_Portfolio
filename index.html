@@ -4,9 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Nishanthi's personal portfolio.">
+    <meta name="color-scheme" content="light dark">
+    <meta name="description" content="My personal portfolio — Developer, Problem Solver and Curious Mind.">
     <title>Nishanthi | Personal Portfolio</title>
 
+    <script>document.documentElement.classList.add("js");try{var t=localStorage.getItem("theme");if(t!=="dark"&&t!=="light"){t=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}document.documentElement.dataset.theme=t}catch(e){document.documentElement.dataset.theme="light"}</script>
     <link rel="stylesheet" href="css/theme.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/main.js" defer></script>
@@ -14,933 +16,405 @@
 
 <body>
 
-    <!-- Navigation -->
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <div class="progress" id="progress" aria-hidden="true"></div>
+
+    <!-- ============ NAVIGATION ============ -->
     <header class="site-header" data-tone="light">
         <nav class="navbar" aria-label="Main navigation">
-
             <a href="#hero" class="navbar__logo">NISHANTHI</a>
 
-            <button
-                class="navbar__toggle"
-                id="navToggle"
-                type="button"
-                aria-label="Open navigation"
-                aria-expanded="false"
-                aria-controls="navLinks">
-
-                <span></span>
-                <span></span>
-                <span></span>
-
+            <button class="navbar__toggle" id="navToggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="navLinks">
+                <span></span><span></span><span></span>
             </button>
 
             <div class="navbar__links" id="navLinks">
                 <a href="#hero" class="navbar__link active">Home</a>
-                <a href="#about" class="navbar__link">About</a>
                 <a href="#journey" class="navbar__link">Journey</a>
                 <a href="#interests" class="navbar__link">Interests</a>
                 <a href="#family" class="navbar__link">Family</a>
                 <a href="#hobbies" class="navbar__link">Hobbies</a>
                 <a href="#footer" class="navbar__link">Contact</a>
+                <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false" aria-label="Switch to dark theme"><span class="theme-toggle__icon" aria-hidden="true"></span><span class="theme-toggle__label">Dark</span></button>
             </div>
-
         </nav>
     </header>
 
-    <main>
+    <main id="main">
 
-<!-- ============ HERO SECTION ============ -->
-    <section id="hero" class="hero" data-tone="light">
+        <!-- ============ 1. HERO ============ -->
+        <section id="hero" class="hero" data-tone="light">
+            <img src="images/hero/HeroSectionImage.png" alt="Portrait photograph in a mountain and lake landscape" class="hero__image" fetchpriority="high">
+            <div class="hero__overlay"></div>
 
-        <!-- Background image -->
-        <img
-            src="images/hero/HeroSectionImage.png"
-            alt="Portrait photograph in a mountain and lake landscape"
-            class="hero__image"
-            fetchpriority="high"
-        >
-
-        <!-- Image overlay -->
-        <div class="hero__overlay"></div>
-
-        <!-- Main content -->
-        <div class="hero__content">
-
-            <p class="hero__eyebrow">HELLO, I'M</p>
-
-            <h1 class="hero__name" id="heroName">
-                <span>NIZZ</span>
-            </h1>
-
-            <p class="hero__tagline">
-                Driven by curiosity.<br>
-                Inspired by possibilities.
-            </p>
-
-            <a href="#journey" class="hero__button">
-                Explore My Journey
-                <span aria-hidden="true">→</span>
-            </a>
-
-        </div>
-
-        <!-- Floating designations -->
-        <div class="hero__person-area">
-
-            <button
-                type="button"
-                class="hero__person-trigger"
-                id="designationToggle"
-                aria-label="Reveal my designations"
-                aria-expanded="false">
-            </button>
-
-            <span class="hero__designation hero__designation--one">
-                Developer
-            </span>
-
-            <span class="hero__designation hero__designation--two">
-                Problem Solver
-            </span>
-
-            <span class="hero__designation hero__designation--three">
-                Curious Mind
-            </span>
-
-        </div>
-
-        <!-- Scroll indicator -->
-        <a href="#journey" class="hero__scroll">
-            <span>SCROLL TO EXPLORE</span>
-            <span class="hero__scroll-arrow" aria-hidden="true">↓</span>
-        </a>
-
-    </section>
-
-
-    <!-- ABOUT SECTION -->
-    <section id="about" class="section section--about" data-tone="light"
-        aria-labelledby="aboutTitle">
-
-        <div class="container">
-
-            <article class="about reveal">
-
-                <div class="about__visual">
-                    <div class="about__frame">
-                        <img
-                            src="images/about/AboutImage.jfif"
-                            alt="Portrait of Nishanthi"
-                            loading="lazy">
-                    </div>
-
-                    <p class="about__caption">
-                        A little moment outside the screen.
-                    </p>
-
-                    <span class="about__star" aria-hidden="true">✳</span>
-                </div>
-
-                <div class="about__content">
-
-                    <p class="eyebrow">A SMALL NOTE ABOUT ME</p>
-
-                    <h2 class="display about__heading" id="aboutTitle">
-                        A little about the person
-                        <span>behind the screen.</span>
-                    </h2>
-
-                    <p class="about__intro">
-                        I'm someone who asks a lot of questions, gets curious
-                        about random things, and occasionally goes down a
-                        rabbit hole just to understand how something works.
-                        I enjoy learning new technologies, solving problems,
-                        experimenting with ideas, and turning little thoughts
-                        into things that actually exist.
-                    </p>
-
-                    <div class="about__notes">
-
-                        <div class="about__note">
-                            <span class="about__label">A little personality</span>
-                            <p>
-                                I'm curious, slightly overthinkative,
-                                occasionally sarcastic, and probably asking
-                                "but why?" when everyone else has moved on.
-                            </p>
-                        </div>
-
-                        <div class="about__note">
-                            <span class="about__label">My approach</span>
-                            <p>
-                                I don't always know what I'm doing when I start
-                                something. But give me a little curiosity,
-                                some time, and a few failed attempts —
-                                I'll figure it out.
-                            </p>
-                        </div>
-
-                        <div class="about__note">
-                            <span class="about__label">Beyond the screen</span>
-                            <p>
-                                I find happiness in little things — crocheting
-                                something with my hands, getting lost in music,
-                                playing chess, and feeling a little more alive
-                                near the beach.
-                            </p>
-                        </div>
-
-                    </div>
-
-                    <p class="about__closing">
-                        Give me a beach, my favourite playlist, and a little
-                        time to crochet. That's pretty much my kind of happiness.
-                    </p>
-
-                    <div class="about__details">
-
-                        <p class="about__details-heading">
-                            A few things about me
-                        </p>
-
-                        <ul class="about__tags">
-                            <li>Engineering graduate</li>
-                            <li>Problem solver</li>
-                            <li>Exploring software development</li>
-                            <li>Chess enthusiast</li>
-                            <li>Music lover</li>
-                            <li>Learning every day</li>
-                        </ul>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-        </div>
-    </section>
-
-
-
-<!-- =========================================
-     FEATURE 04 - PROFESSIONAL JOURNEY
-========================================= -->
-
-<section id="journey"
-    class="section section--journey"
-    data-tone="light"
-    aria-labelledby="journeyTitle">
-
-    <div class="container">
-
-        <!-- Journey Introduction -->
-        <header class="journey__header reveal">
-
-            <p class="eyebrow">( THE STORY SO FAR )</p>
-
-            <h2 class="display journey__title" id="journeyTitle">
-                The journey
-                <span>so far.</span>
-            </h2>
-
-            <p class="journey__subtitle">
-                A little progress, a few milestones, and a dream
-                that became a workplace.
-            </p>
-
-            <p class="journey__intro">
-                Every journey starts somewhere. Mine started with
-                a curious student who enjoyed learning, taking up
-                challenges, and seeing how far she could go.
-                Here's a little timeline of how things unfolded.
-            </p>
-
-        </header>
-
-        <!-- Timeline Heading -->
-        <div class="journey__record">
-
-            <div>
-                <span class="eyebrow">PERSONAL MILESTONES</span>
-                <h3 class="journey__record-title">My timeline</h3>
+            <div class="hero__content">
+                <p class="hero__eyebrow">HELLO, I'M</p>
+                <h1 class="hero__name" id="heroName"><span>NIZZ</span></h1>
+                <p class="hero__tagline">Driven by curiosity.<br>Inspired by possibilities.</p>
+                <a href="#journey" class="hero__button">Explore My Journey <span aria-hidden="true">→</span></a>
             </div>
 
-            <span class="journey__count">05 MILESTONES</span>
-
-        </div>
-
-        <!-- Professional Timeline -->
-        <ol class="journey__timeline">
-
-            <!-- Milestone 1 -->
-            <li class="journey__item reveal">
-
-                <div class="journey__date">
-                    <span>2018</span>
-                </div>
-
-                <div class="journey__marker">
-                    <span></span>
-                </div>
-
-                <div class="journey__content">
-
-                    <p class="journey__category">
-                        ACADEMIC ACHIEVEMENT
-                    </p>
-
-                    <h4 class="journey__milestone-title">
-                        The first milestone
-                    </h4>
-
-                    <p class="journey__organization">
-                        NMMS Scholarship
-                    </p>
-
-                    <p class="journey__description">
-                        Cleared the National Means-cum-Merit Scholarship
-                        examination. One of my early academic milestones
-                        that encouraged me to keep challenging myself.
-                    </p>
-
-                    <div class="journey__extra" hidden>
-                        <p>
-                            This achievement became an early reminder
-                            that consistent effort and curiosity can
-                            open new doors.
-                        </p>
-                    </div>
-
-                    <button class="journey__toggle"
-                        type="button"
-                        aria-expanded="false">
-
-                        <span class="journey__toggle-text">
-                            Show more
-                        </span>
-
-                        <span class="journey__plus" aria-hidden="true">
-                            +
-                        </span>
-
-                    </button>
-
-                </div>
-            </li>
-
-            <!-- Milestone 2 -->
-            <li class="journey__item reveal">
-
-                <div class="journey__date">
-                    <span>2020</span>
-                </div>
-
-                <div class="journey__marker">
-                    <span></span>
-                </div>
-
-                <div class="journey__content">
-
-                    <p class="journey__category">
-                        A NEW CHALLENGE
-                    </p>
-
-                    <h4 class="journey__milestone-title">
-                        A bigger challenge
-                    </h4>
-
-                    <p class="journey__organization">
-                        National Talent Search Examination
-                    </p>
-
-                    <p class="journey__description">
-                        Took on the NTSE challenge. An experience
-                        that became another part of my learning
-                        journey and encouraged me to explore my
-                        academic potential.
-                    </p>
-
-                    <div class="journey__extra" hidden>
-                        <p>
-                            It was another opportunity to test my
-                            abilities, learn from challenges, and
-                            keep moving forward.
-                        </p>
-                    </div>
-
-                    <button class="journey__toggle"
-                        type="button"
-                        aria-expanded="false">
-
-                        <span class="journey__toggle-text">
-                            Show more
-                        </span>
-
-                        <span class="journey__plus" aria-hidden="true">
-                            +
-                        </span>
-
-                    </button>
-
-                </div>
-            </li>
-
-            <!-- Milestone 3 -->
-            <li class="journey__item reveal">
-
-                <div class="journey__date">
-                    <span>2026</span>
-                </div>
-
-                <div class="journey__marker">
-                    <span></span>
-                </div>
-
-                <div class="journey__content">
-
-                    <p class="journey__category">
-                        EDUCATION
-                    </p>
-
-                    <h4 class="journey__milestone-title">
-                        A chapter completed
-                    </h4>
-
-                    <p class="journey__organization">
-                        Engineering Graduate · CGPA 9.01
-                    </p>
-
-                    <p class="journey__description">
-                        Completed my Bachelor's degree in Electrical
-                        and Electronics Engineering with a CGPA of 9.01.
-                        Years of learning, experimenting, building
-                        projects, and figuring things out finally
-                        came together.
-                    </p>
-
-                    <div class="journey__extra" hidden>
-                        <p>
-                            College gave me opportunities to explore
-                            engineering concepts, work on projects,
-                            develop technical skills, and learn
-                            beyond textbooks.
-                        </p>
-                    </div>
-
-                    <button class="journey__toggle"
-                        type="button"
-                        aria-expanded="false">
-
-                        <span class="journey__toggle-text">
-                            Show more
-                        </span>
-
-                        <span class="journey__plus" aria-hidden="true">
-                            +
-                        </span>
-
-                    </button>
-
-                </div>
-            </li>
-
-            <!-- Milestone 4 -->
-            <li class="journey__item reveal">
-
-                <div class="journey__date">
-                    <span>August 2026</span>
-                </div>
-
-                <div class="journey__marker">
-                    <span></span>
-                </div>
-
-                <div class="journey__content">
-
-                    <p class="journey__category">
-                        PROFESSIONAL BEGINNING
-                    </p>
-
-                    <h4 class="journey__milestone-title">
-                        A dream became real
-                    </h4>
-
-                    <p class="journey__organization">
-                        PSIog · Joined the team
-                    </p>
-
-                    <p class="journey__description">
-                        Joined PSIog, a company I had always dreamed
-                        of being part of. A milestone that made many
-                        years of learning and preparation feel worthwhile.
-                    </p>
-
-                    <div class="journey__extra" hidden>
-                        <p>
-                            Beginning a professional journey brought
-                            a new opportunity to apply what I had
-                            learned and experience the world of work.
-                        </p>
-                    </div>
-
-                    <button class="journey__toggle"
-                        type="button"
-                        aria-expanded="false">
-
-                        <span class="journey__toggle-text">
-                            Show more
-                        </span>
-
-                        <span class="journey__plus" aria-hidden="true">
-                            +
-                        </span>
-
-                    </button>
-
-                </div>
-            </li>
-
-            <!-- Milestone 5 -->
-            <li class="journey__item journey__item--current reveal">
-
-                <div class="journey__date">
-                    <span>Present</span>
-                </div>
-
-                <div class="journey__marker">
-                    <span></span>
-                </div>
-
-                <div class="journey__content">
-
-                    <p class="journey__category">
-                        CURRENT CHAPTER
-                    </p>
-
-                    <h4 class="journey__milestone-title">
-                        The story continues
-                    </h4>
-
-                    <p class="journey__organization">
-                        PSIog · Growing and learning
-                    </p>
-
-                    <p class="journey__description">
-                        Currently continuing my journey at PSIog,
-                        learning from real-world experiences,
-                        growing professionally, and looking forward
-                        to everything that's still ahead.
-                    </p>
-
-                    <div class="journey__extra" hidden>
-                        <p>
-                            Every new experience is another opportunity
-                            to improve, contribute, learn from others,
-                            and take the next step forward.
-                        </p>
-                    </div>
-
-                    <button class="journey__toggle"
-                        type="button"
-                        aria-expanded="false">
-
-                        <span class="journey__toggle-text">
-                            Show more
-                        </span>
-
-                        <span class="journey__plus" aria-hidden="true">
-                            +
-                        </span>
-
-                    </button>
-
-                </div>
-            </li>
-
-        </ol>
-
-        <!-- Closing Message -->
-        <div class="journey__closing reveal">
-
-            <p>
-                Not the finish line. Just a chapter I'm really
-                happy to be living.
-            </p>
-
-            <span aria-hidden="true">✳</span>
-
-        </div>
-
-    </div>
-</section>
-
-
-<!-- =========================================
-     FEATURE 05 - PERSONAL INTERESTS
-========================================= -->
-
-<section id="interests"
-    class="section section--interests"
-    data-tone="light"
-    aria-labelledby="interestsTitle">
-
-    <div class="container">
-
-        <!-- Section heading -->
-        <header class="interests__header reveal">
-
-            <p class="eyebrow interests__eyebrow">
-                <span class="interests__line"></span>
-                A LITTLE WORLD OF MY OWN
-            </p>
-
-            <div class="interests__heading-row">
-
-                <h2 class="display interests__title" id="interestsTitle">
-                    Things <span>I love.</span>
-                </h2>
-
-                <p class="interests__intro">
-                    A little creativity, a little wanderlust, and all
-                    the small things that make ordinary days feel special.
-                </p>
-
+            <div class="hero__person-area">
+                <button type="button" class="hero__person-trigger" id="designationToggle" aria-label="Reveal my designations" aria-expanded="false"></button>
+                <span class="hero__designation hero__designation--one">Developer</span>
+                <span class="hero__designation hero__designation--two">Problem Solver</span>
+                <span class="hero__designation hero__designation--three">Curious Mind</span>
             </div>
 
-            <div class="interests__header-bottom">
-                <span>PERSONAL COLLECTION</span>
-                <span>01 — 04</span>
-            </div>
-
-        </header>
-
-        <!-- Four interest cards -->
-        <div class="interests__grid">
-
-            <!-- 01 CROCHET -->
-            <article class="interests__card reveal">
-
-                <div class="interests__visual interests__visual--a">
-
-                    <button class="interests__photo interests__photo--main"
-                        type="button"
-                        data-image="images/interests/C1.png"
-                        data-caption="A little crochet creation"
-                        aria-label="View crochet cat photograph">
-
-                        <img src="images/interests/C1.png"
-                            alt="Lavender handmade crochet cat"
-                            loading="lazy">
-                    </button>
-
-                    <button class="interests__photo interests__photo--top"
-                        type="button"
-                        data-image="images/interests/C2.png"
-                        data-caption="Handmade crochet pouch"
-                        aria-label="View crochet pouch photograph">
-
-                        <img src="images/interests/C2.png"
-                            alt="Lavender crochet pouch"
-                            loading="lazy">
-                    </button>
-
-                    <button class="interests__photo interests__photo--bottom"
-                        type="button"
-                        data-image="images/interests/C3.jpg"
-                        data-caption="Crochet flower creation"
-                        aria-label="View crochet flower photograph">
-
-                        <img src="images/interests/C3.jpg"
-                            alt="Purple and lavender crochet flower"
-                            loading="lazy">
-                    </button>
-
-                    <span class="interests__tag">MADE BY HAND</span>
-                    <span class="interests__index">01</span>
-
-                </div>
-
-                <div class="interests__body">
-
-                    <div class="interests__meta">
-                        <span>THE CREATIVE SIDE</span>
-                        <span>03 PHOTOS</span>
-                    </div>
-
-                    <h3>Made with a little love.</h3>
-
-                    <p>
-                        Give me some yarn and a little time. I love turning
-                        simple threads into tiny things made by hand.
-                    </p>
-
-                    <span class="interests__signature">
-                        A stitch at a time.
-                    </span>
-
-                </div>
-            </article>
-
-            <!-- 02 TRAVEL -->
-            <article class="interests__card reveal">
-
-                <div class="interests__visual interests__visual--b">
-
-                    <button class="interests__photo interests__photo--main"
-                        type="button"
-                        data-image="images/interests/K3.jfif"
-                        data-caption="A moment from somewhere new"
-                        aria-label="View travel photograph">
-
-                        <img src="images/interests/K3.jfif"
-                            alt="Travel photograph beside a wooden doorway"
-                            loading="lazy">
-                    </button>
-
-                    <button class="interests__photo interests__photo--top"
-                        type="button"
-                        data-image="images/interests/K2.jfif"
-                        data-caption="A beautiful architectural place"
-                        aria-label="View architecture photograph">
-
-                        <img src="images/interests/K2.jfif"
-                            alt="White architectural building"
-                            loading="lazy">
-                    </button>
-
-                    <button class="interests__photo interests__photo--bottom"
-                        type="button"
-                        data-image="images/interests/K1.jfif"
-                        data-caption="Taking in the harbour view"
-                        aria-label="View harbour photograph">
-
-                        <img src="images/interests/K1.jfif"
-                            alt="Looking out over a harbour"
-                            loading="lazy">
-                    </button>
-
-                    <span class="interests__tag">OUT &amp; ABOUT</span>
-                    <span class="interests__index">02</span>
-
-                </div>
-
-                <div class="interests__body">
-
-                    <div class="interests__meta">
-                        <span>THE EXPLORER</span>
-                        <span>03 PHOTOS</span>
-                    </div>
-
-                    <h3>Somewhere, something new.</h3>
-
-                    <p>
-                        New places, beautiful architecture, unfamiliar
-                        views and memories that stay long after the trip ends.
-                    </p>
-
-                    <span class="interests__signature">
-                        Collecting little moments.
-                    </span>
-
-                </div>
-            </article>
-
-            <!-- 03 BEACH AND SUNSETS -->
-            <article class="interests__card reveal">
-
-                <div class="interests__visual interests__visual--a interests__visual--coast">
-
-                    <button class="interests__photo interests__photo--main"
-                        type="button"
-                        data-image="images/interests/K6.jfif"
-                        data-caption="A little time by the sea"
-                        aria-label="View beach photograph">
-
-                        <img src="images/interests/K6.jfif"
-                            alt="Standing beside the sea"
-                            loading="lazy">
-                    </button>
-
-                    <button class="interests__photo interests__photo--inset"
-                        type="button"
-                        data-image="images/interests/K4.jpg"
-                        data-caption="A quiet sunset moment"
-                        aria-label="View sunset photograph">
-
-                        <img src="images/interests/K4.jpg"
-                            alt="Sunlight at the end of the day"
-                            loading="lazy">
-                    </button>
-
-                    <span class="interests__tag">SALT IN THE AIR</span>
-                    <span class="interests__index">03</span>
-
-                </div>
-
-                <div class="interests__body">
-
-                    <div class="interests__meta">
-                        <span>THE DAYDREAMER</span>
-                        <span>02 PHOTOS</span>
-                    </div>
-
-                    <h3>Chasing the light.</h3>
-
-                    <p>
-                        Ocean waves, pastel skies and sunsets that make me
-                        stop whatever I'm doing just to watch for a little longer.
-                    </p>
-
-                    <span class="interests__signature">
-                        Somewhere between the sea and sky.
-                    </span>
-
-                </div>
-            </article>
-
-            <!-- 04 MUSIC -->
-            <article class="interests__card reveal">
-
-                <div class="interests__visual interests__visual--music">
-
-                    <div class="interests__music-scene">
-
-                        <span class="interests__music-small">
-                            PRESS PLAY
-                        </span>
-
-                        <div class="interests__vinyl">
-                            <div class="interests__vinyl-label">
-                                <span aria-hidden="true">♫</span>
-                            </div>
-                        </div>
-
-                        <div class="interests__music-lines" aria-hidden="true">
-                            <span></span><span></span><span></span>
-                            <span></span><span></span><span></span>
-                            <span></span><span></span><span></span>
-                            <span></span><span></span>
-                        </div>
-
-                        <span class="interests__music-caption">
-                            MY EVERYDAY SOUNDTRACK
-                        </span>
-
-                    </div>
-
-                    <span class="interests__index">04</span>
-
-                </div>
-
-                <div class="interests__body">
-
-                    <div class="interests__meta">
-                        <span>THE MUSIC LOVER</span>
-                        <span>ALWAYS ON REPEAT</span>
-                    </div>
-
-                    <h3>A soundtrack of my own.</h3>
-
-                    <p>
-                        Some songs become memories. Some playlists make
-                        a long day better. Music is a little part of almost every day.
-                    </p>
-
-                    <span class="interests__signature">
-                        Different days. Different playlists.
-                    </span>
-
-                </div>
-            </article>
-
-        </div>
-
-        <!-- Small memory strip -->
-        <div class="interests__memory reveal">
-
-            <div class="interests__memory-heading">
-                <span>THE LITTLE IN-BETWEENS</span>
-                <p>Not every favourite moment needs a reason.</p>
-            </div>
-
-            <button class="interests__memory-photo"
-                type="button"
-                data-image="images/interests/K5.png"
-                data-caption="A simple day outdoors"
-                aria-label="View outdoor photograph">
-
-                <img src="images/interests/K5.png"
-                    alt="Relaxing outdoors among rocks and greenery"
-                    loading="lazy">
-            </button>
-
-            <div class="interests__memory-note">
-                <span class="interests__star" aria-hidden="true">✳</span>
-
-                <p>
-                    A little sunshine, fresh air, and time to just be.
-                </p>
-
-                <span>THE SIMPLE THINGS</span>
-            </div>
-
-        </div>
-
-        <!-- Closing statement -->
-        <div class="interests__closing reveal">
-
-            <span class="interests__closing-label">
-                A LITTLE REMINDER
-            </span>
-
-            <p>
-                Life feels a little more beautiful when you make
-                time for the things you love.
-            </p>
-
-            <span class="interests__star" aria-hidden="true">✳</span>
-
-        </div>
-
-    </div>
-</section>
-
-
-<!-- SHARED PHOTO LIGHTBOX: INTERESTS + HOBBIES -->
-
-<dialog class="lightbox" id="lightbox"
-    aria-label="Photograph viewer">
-
-    <button class="lightbox__close"
-        type="button"
-        aria-label="Close photograph">
-        &times;
-    </button>
-
-    <img class="lightbox__image" src="" alt="">
-
-    <p class="lightbox__caption"></p>
-
-</dialog>
-
-
-        <!-- Temporary section placeholders -->
-
-
-        <section id="family" class="placeholder">
-            <h2>Family</h2>
+            <a href="#journey" class="hero__scroll"><span>SCROLL TO EXPLORE</span><span class="hero__scroll-arrow" aria-hidden="true">↓</span></a>
         </section>
 
-        <section id="hobbies" class="placeholder">
-            <h2>Hobbies</h2>
+
+        <!-- ============ 2. PROFESSIONAL JOURNEY (opens with About) ============ -->
+        <section id="journey" class="section section--journey" data-tone="light" aria-labelledby="journeyTitle">
+            <div class="container">
+
+                <!-- About -->
+                <article class="about reveal" id="about" aria-labelledby="aboutTitle">
+                    <div class="about__visual">
+                        <div class="about__frame">
+                            <img src="images/interests/K7.jpg" alt="Portrait of Nishanthi" loading="lazy">
+                        </div>
+                        <p class="about__caption">A little moment outside the screen.</p>
+                        <span class="about__star" aria-hidden="true">✳</span>
+                    </div>
+
+                    <div class="about__content">
+                        <p class="eyebrow">A SMALL NOTE ABOUT ME</p>
+                        <h2 class="display about__heading" id="aboutTitle">A little about the person <span>behind the screen.</span></h2>
+                        <p class="about__intro">I'm someone who asks a lot of questions, gets curious about random things, and occasionally goes down a rabbit hole just to understand how something works. I enjoy learning new technologies, solving problems, experimenting with ideas, and turning little thoughts into things that actually exist.</p>
+
+                        <div class="about__notes">
+                            <div class="about__note"><span class="about__label">A little personality</span><p>I'm curious, slightly overthinkative, occasionally sarcastic, and probably asking "but why?" when everyone else has moved on.</p></div>
+                            <div class="about__note"><span class="about__label">My approach</span><p>I don't always know what I'm doing when I start something. But give me a little curiosity, some time, and a few failed attempts — I'll figure it out.</p></div>
+                            <div class="about__note"><span class="about__label">Beyond the screen</span><p>I find happiness in little things — crocheting something with my hands, getting lost in music, playing chess, and feeling a little more alive near the beach.</p></div>
+                        </div>
+
+                        <div class="about__details">
+                            <p class="about__details-heading">A few things about me</p>
+                            <ul class="about__tags">
+                                <li>Engineering graduate</li><li>Problem solver</li><li>Exploring software development</li>
+                                <li>Chess enthusiast</li><li>Music lover</li><li>Learning every day</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Journey header -->
+                <header class="journey__header reveal">
+                    <p class="eyebrow">( THE STORY SO FAR )</p>
+                    <h2 class="display journey__title" id="journeyTitle">The journey <span>so far.</span></h2>
+                    <p class="journey__subtitle">A little progress, a few milestones, and a dream that became a workplace.</p>
+                    <p class="journey__intro">Every journey starts somewhere. Mine started with a curious student who enjoyed learning, taking up challenges, and seeing how far she could go. Here's a little timeline of how things unfolded.</p>
+                </header>
+
+                <div class="journey__record">
+                    <div>
+                        <span class="eyebrow">PERSONAL MILESTONES</span>
+                        <h3 class="journey__record-title">My timeline</h3>
+                    </div>
+                    <span class="journey__count">05 MILESTONES</span>
+                </div>
+
+                <!-- Timeline -->
+                <ol class="journey__timeline">
+
+                    <li class="journey__item reveal">
+                        <div class="journey__date"><span>2018</span></div>
+                        <div class="journey__marker"><span></span></div>
+                        <div class="journey__content">
+                            <p class="journey__category">ACADEMIC ACHIEVEMENT</p>
+                            <h4 class="journey__milestone-title">The first milestone</h4>
+                            <p class="journey__organization">NMMS Scholarship</p>
+                            <p class="journey__description">Cleared the National Means-cum-Merit Scholarship examination. One of my early academic milestones that encouraged me to keep challenging myself.</p>
+                            <div class="journey__extra" hidden><p>This achievement became an early reminder that consistent effort and curiosity can open new doors.</p></div>
+                            <button class="journey__toggle" type="button" aria-expanded="false"><span class="journey__toggle-text">Show more</span><span class="journey__plus" aria-hidden="true">+</span></button>
+                        </div>
+                    </li>
+
+                    <li class="journey__item reveal">
+                        <div class="journey__date"><span>2020</span></div>
+                        <div class="journey__marker"><span></span></div>
+                        <div class="journey__content">
+                            <p class="journey__category">A NEW CHALLENGE</p>
+                            <h4 class="journey__milestone-title">A bigger challenge</h4>
+                            <p class="journey__organization">National Talent Search Examination</p>
+                            <p class="journey__description">Took on the NTSE challenge. An experience that became another part of my learning journey and encouraged me to explore my academic potential.</p>
+                            <div class="journey__extra" hidden><p>It was another opportunity to test my abilities, learn from challenges, and keep moving forward.</p></div>
+                            <button class="journey__toggle" type="button" aria-expanded="false"><span class="journey__toggle-text">Show more</span><span class="journey__plus" aria-hidden="true">+</span></button>
+                        </div>
+                    </li>
+
+                    <li class="journey__item reveal">
+                        <div class="journey__date"><span>2026</span></div>
+                        <div class="journey__marker"><span></span></div>
+                        <div class="journey__content">
+                            <p class="journey__category">EDUCATION</p>
+                            <h4 class="journey__milestone-title">A chapter completed</h4>
+                            <p class="journey__organization">Engineering Graduate · CGPA 9.01</p>
+                            <p class="journey__description">Completed my Bachelor's degree in Electrical and Electronics Engineering with a CGPA of 9.01. Years of learning, experimenting, building projects, and figuring things out finally came together.</p>
+                            <div class="journey__extra" hidden><p>College gave me opportunities to explore engineering concepts, work on projects, develop technical skills, and learn beyond textbooks.</p></div>
+                            <button class="journey__toggle" type="button" aria-expanded="false"><span class="journey__toggle-text">Show more</span><span class="journey__plus" aria-hidden="true">+</span></button>
+                        </div>
+                    </li>
+
+                    <li class="journey__item reveal">
+                        <div class="journey__date"><span>August 2026</span></div>
+                        <div class="journey__marker"><span></span></div>
+                        <div class="journey__content">
+                            <p class="journey__category">PROFESSIONAL BEGINNING</p>
+                            <h4 class="journey__milestone-title">A dream became real</h4>
+                            <p class="journey__organization">PSIog · Joined the team</p>
+                            <p class="journey__description">Joined PSIog, a company I had always dreamed of being part of. A milestone that made many years of learning and preparation feel worthwhile.</p>
+                            <div class="journey__extra" hidden><p>Beginning a professional journey brought a new opportunity to apply what I had learned and experience the world of work.</p></div>
+                            <button class="journey__toggle" type="button" aria-expanded="false"><span class="journey__toggle-text">Show more</span><span class="journey__plus" aria-hidden="true">+</span></button>
+                        </div>
+                    </li>
+
+                    <li class="journey__item journey__item--current reveal">
+                        <div class="journey__date"><span>Present</span></div>
+                        <div class="journey__marker"><span></span></div>
+                        <div class="journey__content">
+                            <p class="journey__category">CURRENT CHAPTER</p>
+                            <h4 class="journey__milestone-title">The story continues</h4>
+                            <p class="journey__organization">PSIog · Growing and learning</p>
+                            <p class="journey__description">Currently continuing my journey at PSIog, learning from real-world experiences, growing professionally, and looking forward to everything that's still ahead.</p>
+                            <div class="journey__extra" hidden><p>Every new experience is another opportunity to improve, contribute, learn from others, and take the next step forward.</p></div>
+                            <button class="journey__toggle" type="button" aria-expanded="false"><span class="journey__toggle-text">Show more</span><span class="journey__plus" aria-hidden="true">+</span></button>
+                        </div>
+                    </li>
+
+                </ol>
+
+                <div class="journey__closing reveal">
+                    <p>Not the finish line. Just a chapter I'm really happy to be living.</p>
+                    <span aria-hidden="true">✳</span>
+                </div>
+            </div>
         </section>
+
+
+        <!-- ============ 3. PERSONAL LIKINGS ============ -->
+        <section id="interests" class="section section--interests" data-tone="light" aria-labelledby="interestsTitle">
+            <div class="container">
+
+                <header class="interests__header reveal">
+                    <p class="eyebrow interests__eyebrow"><span class="interests__line"></span>A LITTLE WORLD OF MY OWN</p>
+                    <div class="interests__heading-row">
+                        <h2 class="display interests__title" id="interestsTitle">Things <span>I love.</span></h2>
+                        <p class="interests__intro">A little creativity, a little wanderlust, and all the small things that make ordinary days feel special.</p>
+                    </div>
+                    <div class="interests__header-bottom"><span>PERSONAL COLLECTION</span><span>01 — 04</span></div>
+                </header>
+
+                <div class="interests__grid">
+
+                    <!-- Crochet -->
+                    <article class="interests__card reveal">
+                        <div class="interests__visual interests__visual--a">
+                            <button class="interests__photo interests__photo--main" type="button" data-image="images/interests/crochet-pouch.jpg" data-caption="A little crochet creation" aria-label="View crochet cat photograph"><img src="images/interests/C1.png" alt="Lavender handmade crochet cat" loading="lazy"></button>
+                            <button class="interests__photo interests__photo--top" type="button" data-image="images/interests/crochet-cat.jpg" data-caption="Handmade crochet pouch" aria-label="View crochet pouch photograph"><img src="images/interests/C2.png" alt="Lavender crochet pouch" loading="lazy"></button>
+                            <button class="interests__photo interests__photo--bottom" type="button" data-image="images/interests/crochet-round-bag.jpg" data-caption="Crochet flower creation" aria-label="View crochet flower photograph"><img src="images/interests/C3.jpg" alt="Purple and lavender crochet flower" loading="lazy"></button>
+                            <span class="interests__tag">MADE BY HAND</span><span class="interests__index">01</span>
+                        </div>
+                        <div class="interests__body">
+                            <div class="interests__meta"><span>THE CREATIVE SIDE</span><span>03 PHOTOS</span></div>
+                            <h3>Made with a little love.</h3>
+                            <p>Give me some yarn and a little time. I love turning simple threads into tiny things made by hand.</p>
+                            <span class="interests__signature">A stitch at a time.</span>
+                        </div>
+                    </article>
+
+                    <!-- Travel -->
+                    <article class="interests__card reveal">
+                        <div class="interests__visual interests__visual--b">
+                            <button class="interests__photo interests__photo--main" type="button" data-image="images/interests/travel-door.jpg" data-caption="A moment from somewhere new" aria-label="View travel photograph"><img src="images/interests/K3.jfif" alt="Travel photograph beside a wooden doorway" loading="lazy"></button>
+                            <button class="interests__photo interests__photo--top" type="button" data-image="images/interests/travel-architecture.jpg" data-caption="A beautiful architectural place" aria-label="View architecture photograph"><img src="images/interests/K2.jfif" alt="White architectural building" loading="lazy"></button>
+                            <button class="interests__photo interests__photo--bottom" type="button" data-image="images/interests/travel-viewpoint.jpg" data-caption="Taking in the harbour view" aria-label="View harbour photograph"><img src="images/interests/K1.jfif" alt="Looking out over a harbour" loading="lazy"></button>
+                            <span class="interests__tag">OUT &amp; ABOUT</span><span class="interests__index">02</span>
+                        </div>
+                        <div class="interests__body">
+                            <div class="interests__meta"><span>THE EXPLORER</span><span>03 PHOTOS</span></div>
+                            <h3>Somewhere, something new.</h3>
+                            <p>New places, beautiful architecture, unfamiliar views and memories that stay long after the trip ends.</p>
+                            <span class="interests__signature">Collecting little moments.</span>
+                        </div>
+                    </article>
+
+                    <!-- Beach and sunsets -->
+                    <article class="interests__card reveal">
+                        <div class="interests__visual interests__visual--a interests__visual--coast">
+                            <button class="interests__photo interests__photo--main" type="button" data-image="images/interests/beach.jpg" data-caption="A little time by the sea" aria-label="View beach photograph"><img src="images/interests/K6.jfif" alt="Standing beside the sea" loading="lazy"></button>
+                            <button class="interests__photo interests__photo--inset" type="button" data-image="images/interests/sunset.jpg" data-caption="A quiet sunset moment" aria-label="View sunset photograph"><img src="images/interests/K4.jpg" alt="Sunlight at the end of the day" loading="lazy"></button>
+                            <span class="interests__tag">SALT IN THE AIR</span><span class="interests__index">03</span>
+                        </div>
+                        <div class="interests__body">
+                            <div class="interests__meta"><span>THE DAYDREAMER</span><span>02 PHOTOS</span></div>
+                            <h3>Chasing the light.</h3>
+                            <p>Ocean waves, pastel skies and sunsets that make me stop whatever I'm doing just to watch for a little longer.</p>
+                            <span class="interests__signature">Somewhere between the sea and sky.</span>
+                        </div>
+                    </article>
+
+                    <!-- Music -->
+                    <article class="interests__card reveal">
+                        <div class="interests__visual interests__visual--music">
+                            <button class="interests__music-scene" id="soundtrackToggle" type="button" aria-pressed="false" aria-label="Play Keep Moving Forward" aria-controls="soundtrackAudio">
+                                <span class="interests__music-small" id="soundtrackPrompt" aria-live="polite">PRESS PLAY</span>
+                                <div class="interests__vinyl"><div class="interests__vinyl-label"><span aria-hidden="true">♫</span></div></div>
+                                <div class="interests__music-lines" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+                                <span class="interests__music-caption">MY EVERYDAY SOUNDTRACK</span>
+                            </button>
+                            <audio id="soundtrackAudio" preload="none" aria-label="Keep Moving Forward soundtrack">
+                                <source src="audio/keep-moving-forward.mp3" type="audio/mpeg">
+                                Your browser does not support audio playback.
+                            </audio>
+                            <span class="interests__index">04</span>
+                        </div>
+                        <div class="interests__body">
+                            <div class="interests__meta"><span>THE MUSIC LOVER</span><span>ALWAYS ON REPEAT</span></div>
+                            <h3>A soundtrack of my own.</h3>
+                            <p>Some songs become memories. Some playlists make a long day better. Music is a little part of almost every day.</p>
+                            <span class="interests__signature">Different days. Different playlists.</span>
+                        </div>
+                    </article>
+
+                </div>
+
+                <div class="interests__memory reveal">
+                    <div class="interests__memory-heading">
+                        <span>THE LITTLE IN-BETWEENS</span>
+                        <p>Not every favourite moment needs a reason.</p>
+                    </div>
+                    <button class="interests__memory-photo" type="button" data-image="images/interests/outdoor.jpg" data-caption="A simple day outdoors" aria-label="View outdoor photograph"><img src="images/interests/K5.png" alt="Relaxing outdoors among rocks and greenery" loading="lazy"></button>
+                    <div class="interests__memory-note">
+                        <span class="interests__star" aria-hidden="true">✳</span>
+                        <p>A little sunshine, fresh air, and time to just be.</p>
+                        <span>THE SIMPLE THINGS</span>
+                    </div>
+                </div>
+
+                <div class="interests__closing reveal">
+                    <span class="interests__closing-label">A LITTLE REMINDER</span>
+                    <p>Life feels a little more beautiful when you make time for the things you love.</p>
+                    <span class="interests__star" aria-hidden="true">✳</span>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ============ 4. FAMILY ============ -->
+        <section id="family" class="section section--dark" data-tone="dark" aria-labelledby="familyTitle">
+            <div class="container">
+                <header class="family__header reveal">
+                    <p class="eyebrow">THE PEOPLE BEHIND ME</p>
+                    <h2 class="display family__title" id="familyTitle">My <span>family.</span></h2>
+                    <p class="section__lead">Three people, three stories. Tap a card to turn it over and read my note.</p>
+                </header>
+
+                <figure class="family__banner reveal">
+                    <img src="images/interests/Family.png" alt="Illustration of a family of four, two standing and two seated together" loading="lazy">
+                    <figcaption>Home is wherever these people are.</figcaption>
+                </figure>
+
+                <div class="family__grid">
+                    <button class="flip flip--father reveal" type="button" aria-pressed="false">
+                        <span class="flip__inner">
+                            <span class="flip__face flip__front"><img class="flip__image" src="images/interests/F1.png" alt="Illustration of Nishanthi's father" loading="lazy"><span class="flip__label">Father</span><span class="flip__name">Ramarajan</span><span class="flip__hint">Tap to turn over</span></span>
+                            <span class="flip__face flip__back"><span class="flip__label">Father</span><span class="flip__text">My first example of strength, patience, and responsibility. Someone whose efforts have taught me the value of hard work and standing strong through life's ups and downs.</span></span>
+                        </span>
+                    </button>
+                    <button class="flip flip--mother reveal" type="button" aria-pressed="false">
+                        <span class="flip__inner">
+                            <span class="flip__face flip__front"><img class="flip__image" src="images/interests/M2.png" alt="Illustration of Nishanthi's mother" loading="lazy"><span class="flip__label">Mother</span><span class="flip__name">Rani</span><span class="flip__hint">Tap to turn over</span></span>
+                            <span class="flip__face flip__back"><span class="flip__label">Mother</span><span class="flip__text">A little bit of comfort, a lot of care, and endless love. Someone who makes even ordinary days feel special and reminds me that home is more than just a place.</span></span>
+                        </span>
+                    </button>
+                    <button class="flip flip--brother reveal" type="button" aria-pressed="false">
+                        <span class="flip__inner">
+                            <span class="flip__face flip__front"><img class="flip__image" src="images/interests/B1.png" alt="Illustration of Nishanthi's brother" loading="lazy"><span class="flip__label">Brother</span><span class="flip__name">Sriram</span><span class="flip__hint">Tap to turn over</span></span>
+                            <span class="flip__face flip__back"><span class="flip__label">Brother</span><span class="flip__text">My built-in companion, occasional troublemaker, and someone who makes family moments a little more entertaining. A bond filled with teasing, laughter, and memories.</span></span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ============ 5. HOBBIES & PASSIONS ============ -->
+        <section id="hobbies" class="section section--hobbies" data-tone="light" aria-labelledby="hobbiesTitle">
+            <div class="container">
+                <header class="hobbies__header reveal">
+                    <p class="eyebrow">WHAT I DO WITH MY HANDS AND MIND</p>
+                    <h2 class="display hobbies__title" id="hobbiesTitle">Hobbies <span>&amp; passions.</span></h2>
+                    <p class="section__lead">The things I practise, not just the things I enjoy. Some are quiet, some are noisy, all of them keep me learning.</p>
+                </header>
+
+                <div class="hobbies__grid">
+                    <article class="hobby reveal">
+                        <button class="hobby__photo" type="button" data-image="images/interests/crochet-round-bag.jpg" data-caption="A round crochet bag in purple and lavender" aria-label="View crochet photograph"><img src="images/interests/C1.png" alt="Round purple and lavender crochet bag" loading="lazy"></button>
+                        <p class="hobby__tag">01 · MADE BY HAND</p>
+                        <h3>Crochet</h3>
+                        <p>Turning yarn into small things made by hand. Every stitch is slow, patient and oddly relaxing.</p>
+                    </article>
+                    <article class="hobby reveal">
+                        <div class="hobby__photo hobby__photo--glyph" aria-hidden="true"><span>&#9822;</span></div>
+                        <p class="hobby__tag">02 · THE SLOW GAME</p>
+                        <h3>Chess</h3>
+                        <p>Thinking a few moves ahead, and learning from the ones I got wrong.</p>
+                    </article>
+                    <article class="hobby reveal">
+                        <div class="hobby__photo hobby__photo--glyph" aria-hidden="true"><span>&#9835;</span></div>
+                        <p class="hobby__tag">03 · ALWAYS ON</p>
+                        <h3>Music</h3>
+                        <p>Getting lost in a playlist, one song at a time. The right song can change a whole day.</p>
+                    </article>
+                    <article class="hobby reveal">
+                        <div class="hobby__photo hobby__photo--glyph" aria-hidden="true"><span>&lt;/&gt;</span></div>
+                        <p class="hobby__tag">04 · LEARNING DAILY</p>
+                        <h3>Software development</h3>
+                        <p>Exploring, experimenting and building something new every day, one failed attempt at a time.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shared photo viewer (Interests + Hobbies) -->
+        <dialog class="lightbox" id="lightbox" aria-label="Photograph viewer">
+            <button class="lightbox__close" type="button" aria-label="Close photograph">&times;</button>
+            <button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Previous photograph">&lsaquo;</button>
+            <img class="lightbox__image" src="" alt="">
+            <button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Next photograph">&rsaquo;</button>
+            <p class="lightbox__caption"></p>
+        </dialog>
 
     </main>
 
-    <footer id="footer" class="placeholder">
-        <h2>Contact</h2>
+
+    <!-- ============ 6. FOOTER ============ -->
+    <footer id="footer" class="section section--dark footer" data-tone="dark">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__intro">
+                    <p class="eyebrow">LET'S CONNECT</p>
+                    <p class="footer__title">Say hello.</p>
+                    <p class="footer__lead">Have a project, an idea, or just want to talk crochet, chess and code? My inbox and my LinkedIn are always open.</p>
+                    <ul class="footer__links">
+                        <li><a href="https://www.linkedin.com/in/nishanthi2004" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                        <li><a href="https://github.com/NishanthiRamarajan/Personal_Portfolio" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                        <li><a href="mailto:nishanthi.r2704@gmail.com">Email</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p>Built with HTML, CSS &amp; JS | Deployed via GitHub Actions</p>
+                <p>&copy; <span id="year">2026</span> Nishanthi. All rights reserved.</p>
+                <button class="footer__top" id="backToTop" type="button" aria-label="Back to top">&uarr; Back to top</button>
+            </div>
+        </div>
     </footer>
 
 </body>
+
 </html>

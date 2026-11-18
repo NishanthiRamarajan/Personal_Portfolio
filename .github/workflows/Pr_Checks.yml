@@ -1,0 +1,19 @@
+name: Pull request checks
+
+on:
+  pull_request:
+    branches: [develop]
+
+jobs:
+  required-files:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check required site files
+        run: |
+          test -f index.html
+          test -f css/style.css
+          test -f css/theme.css
+          test -f js/main.js
+          test -f audio/keep-moving-forward.mp3
