@@ -1,0 +1,83 @@
+/* =====================================================
+   THEME.CSS — the ONLY place design tokens live.
+   Change values here and the whole site follows.
+   ===================================================== */
+
+:root {
+
+    /* Primary / secondary / accent */
+    --color-primary: #252A27;
+    --color-secondary: #4F5A52;
+    --color-accent: #899580;
+    --color-accent-text: #5F6B58;        /* accent that passes contrast on light backgrounds */
+    --color-accent-on-dark: #B9C5AE;     /* accent that passes contrast on dark backgrounds */
+    --color-white: #FFFFFF;
+
+    /* Backgrounds */
+    --color-background: #F5F6F2;
+    --color-tint: #E6EAE0;
+    --color-deep: #3A453E;
+    --color-deep-2: #252A27;
+
+    /* Text */
+    --color-text: #252A27;
+    --color-text-secondary: #5B635C;
+    --color-text-light: #FFFFFF;
+    --color-text-on-dark: #F5F6F2;
+    --color-text-on-dark-muted: rgba(245, 246, 242, 0.74);
+
+    /* Borders, shadows, overlays, glass */
+    --color-border: rgba(37, 42, 39, 0.15);
+    --color-border-on-dark: rgba(245, 246, 242, 0.24);
+    --color-shadow: rgba(0, 0, 0, 0.12);
+    --color-shadow-strong: rgba(0, 0, 0, 0.28);
+    --color-scrim: rgba(20, 20, 20, 0.78);
+    --color-overlay: rgba(245, 246, 242, 0.92);
+    --color-overlay-soft: rgba(245, 246, 242, 0.55);
+    --color-glass: rgba(255, 255, 255, 0.18);
+    --color-glass-hover: rgba(255, 255, 255, 0.28);
+    --color-glass-border: rgba(255, 255, 255, 0.55);
+    --color-glass-dark: rgba(245, 246, 242, 0.07);
+    --color-menu: rgba(245, 246, 242, 0.95);
+
+    /* Gradients — every gradient on the site is built from the colours above */
+    --gradient-hero-overlay: linear-gradient(90deg, var(--color-overlay) 0%, var(--color-overlay-soft) 40%, transparent 72%);
+    --gradient-hero-overlay-mobile: linear-gradient(90deg, var(--color-overlay) 0%, var(--color-overlay-soft) 65%, transparent 100%);
+    --gradient-hero-fade: linear-gradient(180deg, transparent 0%, var(--color-background) 100%);
+    --gradient-light-down: linear-gradient(180deg, var(--color-background) 0%, var(--color-tint) 100%);
+    --gradient-light-up: linear-gradient(180deg, var(--color-tint) 0%, var(--color-background) 100%);
+    --gradient-dark: linear-gradient(180deg, var(--color-deep) 0%, var(--color-deep-2) 100%);
+    --gradient-fade-from-light: linear-gradient(180deg, var(--color-background) 0%, transparent 100%);
+    --gradient-fade-from-tint: linear-gradient(180deg, var(--color-tint) 0%, transparent 100%);
+    --gradient-fade-from-dark: linear-gradient(180deg, var(--color-deep-2) 0%, transparent 100%);
+    --gradient-accent: linear-gradient(135deg, var(--color-accent) 0%, var(--color-secondary) 100%);
+    --gradient-photo: linear-gradient(135deg, var(--color-background) 0%, var(--color-tint) 100%);
+    --gradient-photo-reverse: linear-gradient(135deg, var(--color-tint) 0%, var(--color-background) 100%);
+    --gradient-music: radial-gradient(circle at 50% 48%, var(--color-tint) 0%, var(--color-background) 72%);
+    --gradient-vinyl: repeating-radial-gradient(circle, var(--color-primary) 0, var(--color-primary) 2px, var(--color-secondary) 3px, var(--color-primary) 4px);
+
+    /* Typography */
+    --font-heading: Georgia, "Times New Roman", serif;
+    --font-body: Arial, Helvetica, sans-serif;
+    --font-size-small: 0.85rem;
+    --font-size-base: 1rem;
+    --font-size-large: 1.25rem;
+
+    /* Layout */
+    --max-width: 1200px;
+    --nav-height: 80px;
+    --section-fade: 140px;
+
+    /* Spacing */
+    --spacing-small: 0.5rem;
+    --spacing-medium: 1rem;
+    --spacing-large: 2rem;
+    --spacing-xl: 4rem;
+    --spacing-section: clamp(4.5rem, 9vw, 7rem);
+
+    /* Shape and motion */
+    --border-radius: 8px;
+    --border-radius-large: 14px;
+    --transition-speed: 0.3s;
+    --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
