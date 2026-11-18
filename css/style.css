@@ -1592,4 +1592,295 @@ a {
     }
 }
 
+/* =========================================
+   FEATURE 06 - FAMILY SECTION
+========================================= */
+
+.section--dark {
+    --fade: var(--gradient-fade-from-light);
+    padding-top: calc(var(--spacing-section) + var(--section-fade) * 0.6);
+    background: var(--gradient-dark);
+    color: var(--color-text-on-dark);
+}
+
+.section--dark .eyebrow {
+    color: var(--color-accent-on-dark);
+}
+
+.section--dark .display,
+.section--dark .display span {
+    color: var(--color-text-on-dark);
+}
+
+.section--dark .display span {
+    color: var(--color-accent-on-dark);
+}
+
+.section--dark .section__lead {
+    color: var(--color-text-on-dark-muted);
+}
+
+/* Family heading */
+
+.family__header {
+    max-width: 750px;
+    margin-bottom: 45px;
+}
+
+.family__title {
+    font-size: clamp(3rem, 6.5vw, 5.5rem);
+    line-height: 0.98;
+}
+
+.family__intro {
+    max-width: 580px;
+    margin-top: 20px;
+    color: var(--color-text-on-dark-muted);
+    font-size: 0.9rem;
+    line-height: 1.9;
+}
+
+.family__hint {
+    display: inline-block;
+    margin-top: 25px;
+    color: var(--color-accent-on-dark);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+}
+
+/* Family banner */
+
+.family__banner {
+    position: relative;
+    min-height: clamp(220px, 32vw, 380px);
+    margin-bottom: 35px;
+    overflow: hidden;
+    border: 1px solid var(--color-border-on-dark);
+    border-radius: var(--border-radius-large);
+    background: var(--gradient-accent);
+}
+
+.family__banner img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.75;
+}
+
+.family__banner-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 30px;
+    background: linear-gradient(
+        to top,
+        rgba(15, 20, 18, 0.78),
+        transparent 75%
+    );
+    color: var(--color-text-on-dark);
+}
+
+.family__banner-overlay span {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+}
+
+.family__banner-overlay p {
+    margin-top: 8px;
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 3vw, 2.3rem);
+    font-style: italic;
+}
+
+/* Family card grid */
+
+.family__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+/* Flip card */
+
+.flip {
+    display: block;
+    min-width: 0;
+    min-height: 300px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+    perspective: 1000px;
+}
+
+.flip__inner {
+    position: relative;
+    display: block;
+    width: 100%;
+    min-height: 300px;
+    transform-style: preserve-3d;
+    transition: transform 0.7s var(--ease);
+}
+
+.flip.is-flipped .flip__inner {
+    transform: rotateY(180deg);
+}
+
+.flip__face {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 27px;
+    overflow: hidden;
+    border: 1px solid var(--color-border-on-dark);
+    border-radius: var(--border-radius-large);
+    background: var(--color-glass-dark);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transition: background var(--transition-speed);
+}
+
+.flip:hover .flip__face {
+    background: var(--color-glass);
+}
+
+/* Card front */
+
+.flip__front::before {
+    content: "✳";
+    position: absolute;
+    top: 22px;
+    right: 24px;
+    color: var(--color-accent-on-dark);
+    font-size: 2rem;
+    opacity: 0.8;
+}
+
+.flip__number {
+    position: absolute;
+    top: 24px;
+    left: 26px;
+    color: var(--color-text-on-dark-muted);
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+}
+
+.flip__label {
+    color: var(--color-accent-on-dark);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.flip__name {
+    color: var(--color-text-on-dark);
+    font-family: var(--font-heading);
+    font-size: clamp(1.7rem, 2.7vw, 2.3rem);
+    line-height: 1.2;
+}
+
+.flip__hint {
+    margin-top: 7px;
+    color: var(--color-text-on-dark-muted);
+    font-size: 0.75rem;
+}
+
+/* Card back */
+
+.flip__back {
+    justify-content: center;
+    transform: rotateY(180deg);
+    background: var(--gradient-accent);
+}
+
+.flip__text {
+    color: var(--color-text-on-dark);
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-style: italic;
+    line-height: 1.8;
+}
+
+.flip__back-note {
+    margin-top: 15px;
+    color: var(--color-accent-on-dark);
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+}
+
+/* Closing message */
+
+.family__closing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 75px;
+    text-align: center;
+}
+
+.family__closing > span {
+    color: var(--color-accent-on-dark);
+    font-size: 1.7rem;
+}
+
+.family__closing p {
+    max-width: 650px;
+    color: var(--color-text-on-dark);
+    font-family: var(--font-heading);
+    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+    font-style: italic;
+    line-height: 1.5;
+}
+
+/* Tablet */
+
+@media (max-width: 950px) {
+    .family__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    .family__grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    .flip,
+    .flip__inner {
+        min-height: 260px;
+    }
+
+    .family__banner {
+        min-height: 230px;
+    }
+
+    .family__closing {
+        margin-top: 50px;
+    }
+}
+
+/* Keyboard focus */
+
+.flip:focus-visible {
+    outline: 2px solid var(--color-accent-on-dark);
+    outline-offset: 5px;
+}
+
 

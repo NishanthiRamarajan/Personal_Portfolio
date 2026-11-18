@@ -231,3 +231,24 @@ if (lightbox && lightboxClose) {
     });
 
 }
+
+/* =========================================
+   FEATURE 06 - FAMILY FLIP CARDS
+========================================= */
+
+const familyCards = document.querySelectorAll(".flip");
+
+familyCards.forEach((card) => {
+
+    card.addEventListener("click", () => {
+
+        const flipped = card.classList.toggle("is-flipped");
+
+        card.setAttribute(
+            "aria-pressed",
+            String(flipped)
+        );
+
+    });
+
+});
