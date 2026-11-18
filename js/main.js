@@ -125,3 +125,37 @@ if ("IntersectionObserver" in window && !prefersReducedMotion) {
     });
 
 }
+
+/* =========================================
+   FEATURE 04 - JOURNEY SHOW MORE / LESS
+========================================= */
+
+const journeyButtons = document.querySelectorAll(".journey__toggle");
+
+journeyButtons.forEach((button) => {
+
+    const extraContent = button.previousElementSibling;
+
+    const label = button.querySelector(".journey__toggle-text");
+
+    if (!extraContent || !label) return;
+
+    button.addEventListener("click", () => {
+
+        const expanded =
+            button.getAttribute("aria-expanded") === "true";
+
+        button.setAttribute(
+            "aria-expanded",
+            String(!expanded)
+        );
+
+        extraContent.hidden = expanded;
+
+        label.textContent = expanded
+            ? "Show more"
+            : "Show less";
+
+    });
+
+});
